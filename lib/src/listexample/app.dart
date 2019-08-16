@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/src/widgets/image_list.dart';
+import 'package:flutter_playground/src/listexample/widgets/image_list.dart';
 import 'package:http/http.dart' show get;
 
 import 'models/image_model.dart';
