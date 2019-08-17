@@ -4,4 +4,6 @@ import 'package:flutter_playground/src/listexample/app.dart';
 
 import 'package:flutter_playground/src/loginexample/app.dart';
 
-void main() => runApp(LoginApp());
+import 'package:flutter_playground/src/loginbloc/app.dart';
+
+void main() => runApp(LoginBlocApp());
