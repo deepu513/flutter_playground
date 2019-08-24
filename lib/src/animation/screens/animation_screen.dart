@@ -153,3 +153,4 @@ class AnimationState extends State<AnimationScreen>
       ),
     );
   }
+}
