@@ -8,4 +8,6 @@ import 'package:flutter_playground/src/loginbloc/app.dart';
 
 import 'package:flutter_playground/src/animation/app.dart';
 
-void main() => runApp(AnimationApp());
+import 'package:flutter_playground/src/news/app.dart';
+
+void main() => runApp(NewsApp());
