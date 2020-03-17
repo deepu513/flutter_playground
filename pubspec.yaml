@@ -51,6 +51,8 @@ flutter:
           weight: 300
         - asset: fonts/Rubik-Medium.ttf
           weight: 400
+  assets:
+    - assets/img/wall.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
