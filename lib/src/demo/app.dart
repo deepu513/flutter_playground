@@ -7,10 +7,10 @@ class DemoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var greenColor = Color.fromARGB(255, 51, 175, 133);
 
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarIconBrightness: Brightness.dark
-    ));
+//    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+//      statusBarColor: Colors.white,
+//      statusBarIconBrightness: Brightness.dark
+//    ));
 
     return MaterialApp(
       home: SafeArea(
