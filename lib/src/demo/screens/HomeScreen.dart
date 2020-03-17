@@ -108,7 +108,7 @@ class FirstTabContent extends StatelessWidget {
               RichText(
                 text: TextSpan(
                     style: TextStyle(
-                        color: Colors.grey[400],
+                        color: Colors.grey[500],
                         fontSize: 12.0,
                         fontWeight: FontWeight.w400),
                     text: "Choose your course",
@@ -133,7 +133,7 @@ class FirstTabContent extends StatelessWidget {
                     maxLines: 1,
                     textAlignVertical: TextAlignVertical.center,
                     style: TextStyle(
-                      color: Colors.grey[400],
+                      color: Colors.grey[500],
                       fontSize: 12.0,
                     ),
                     decoration: InputDecoration(
@@ -144,10 +144,10 @@ class FirstTabContent extends StatelessWidget {
                         hintText:
                             "Search for your grade, course, training type...",
                         hintStyle:
-                            TextStyle(color: Colors.grey[400], fontSize: 12.0),
+                            TextStyle(color: Colors.grey[500], fontSize: 12.0),
                         prefixIcon: Icon(
                           Icons.search,
-                          color: Colors.grey[400],
+                          color: Colors.grey[500],
                           size: 16.0,
                         )),
                   ),
@@ -186,6 +186,54 @@ class FirstTabContent extends StatelessWidget {
                   Icon(Icons.airplanemode_active, color: Colors.white),
                   "Leaderboard"),
             ],
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                "Recommended course",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              Text(
+                "More",
+                style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey[500],
+                    fontWeight: FontWeight.w300),
+              ),
+            ],
+          ),
+          SizedBox(height: 4,),
+          Row(
+            children: <Widget>[
+              Text(
+                "you may also like",
+                style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey[500],
+                    fontWeight: FontWeight.w300),
+              ),
+              SizedBox(width: 6,),
+              Container(
+                width: 12,
+                height: 12,
+                child: DecoratedBox(
+                  child: Center(child: Text('6', style: TextStyle(color: Colors.white, fontSize: 10),)),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF8CD195),
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.all(Radius.circular(4))
+                  ),
+                ),
+              )
+            ],
           )
         ],
       ),
@@ -214,9 +262,7 @@ class FirstTabContent extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w400,
-                fontSize: 12),
+                color: Colors.black, fontWeight: FontWeight.w400, fontSize: 12),
           )
         ],
       ),
