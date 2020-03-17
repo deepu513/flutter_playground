@@ -102,25 +102,122 @@ class FirstTabContent extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: 4.0,
-          ),
+          SizedBox(height: 4.0),
           Row(
             children: <Widget>[
               RichText(
                 text: TextSpan(
-                  style: TextStyle(color: Colors.grey[400], fontSize: 10.0),
-                  text: "Choose your course",
-                  children: [
-                    TextSpan(
-                      style: TextStyle(color: greenColor, fontSize: 10.0),
-                      text: " right away"
-                    )
-                  ]
-                ),
+                    style: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.w400),
+                    text: "Choose your course",
+                    children: [
+                      TextSpan(
+                          style: TextStyle(
+                              color: greenColor,
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w400),
+                          text: " right away")
+                    ]),
               )
             ],
           ),
+          SizedBox(height: 16.0),
+          SizedBox(
+            height: 36,
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: TextField(
+                    maxLines: 1,
+                    textAlignVertical: TextAlignVertical.center,
+                    style: TextStyle(
+                      color: Colors.grey[400],
+                      fontSize: 12.0,
+                    ),
+                    decoration: InputDecoration(
+                        hintMaxLines: 1,
+                        border: InputBorder.none,
+                        filled: true,
+                        fillColor: Color(0xFFF8FAFB),
+                        hintText:
+                            "Search for your grade, course, training type...",
+                        hintStyle:
+                            TextStyle(color: Colors.grey[400], fontSize: 12.0),
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Colors.grey[400],
+                          size: 16.0,
+                        )),
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          GridView.count(
+            crossAxisCount: 3,
+            childAspectRatio: 1.20,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            children: <Widget>[
+              _getGridTile(
+                  Color(0xFFFFC425),
+                  Icon(
+                    Icons.folder_special,
+                    color: Colors.white,
+                  ),
+                  "Category"),
+              _getGridTile(
+                  Color(0xFF58D688),
+                  Icon(Icons.play_circle_filled, color: Colors.white),
+                  "Boutique class"),
+              _getGridTile(Color(0xFF55B3FE),
+                  Icon(Icons.assignment, color: Colors.white), "Free course"),
+              _getGridTile(Color(0xFFFE7B7A),
+                  Icon(Icons.store, color: Colors.white), "Bookstore"),
+              _getGridTile(Color(0xFFB766F2),
+                  Icon(Icons.videocam, color: Colors.white), "Live course"),
+              _getGridTile(
+                  Color(0xFF66DD4C),
+                  Icon(Icons.airplanemode_active, color: Colors.white),
+                  "Leaderboard"),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  _getGridTile(Color color, Icon icon, String title) {
+    return Center(
+      child: Column(
+        children: [
+          Container(
+            width: 50,
+            height: 50,
+            child: Material(
+              elevation: 5.0,
+              type: MaterialType.circle,
+              color: color,
+              child: Center(
+                child: icon,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          Text(
+            title,
+            style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w400,
+                fontSize: 12),
+          )
         ],
       ),
     );
