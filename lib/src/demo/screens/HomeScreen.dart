@@ -61,39 +61,62 @@ class HomeScreenState extends State<HomeScreen> {
 class FirstTabContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var greenColor = Color.fromARGB(255, 51, 175, 133);
-    var badgeColor = Color.fromARGB(255, 254, 119, 119);
+    var greenColor = Color(0xFF33AF85);
+    var badgeColor = Color(0xFFFE7777);
 
     return Container(
       padding: EdgeInsets.all(16.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
         children: <Widget>[
-          Text(
-            "Home Page",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 24.0,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          Stack(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Icon(
-                Icons.notifications,
-                color: greenColor,
+              Text(
+                "Home Page",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
-              Positioned(
-                top: 4,
-                right: 4,
-                width: 8,
-                height: 8,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: badgeColor,
-                    border: Border.all(color: Colors.white, width: 1.5),
-                    shape: BoxShape.circle,
+              Stack(
+                children: <Widget>[
+                  Icon(
+                    Icons.notifications,
+                    color: greenColor,
                   ),
+                  Positioned(
+                    top: 4,
+                    right: 4,
+                    width: 8,
+                    height: 8,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: badgeColor,
+                        border: Border.all(color: Colors.white, width: 1.5),
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 4.0,
+          ),
+          Row(
+            children: <Widget>[
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(color: Colors.grey[400], fontSize: 10.0),
+                  text: "Choose your course",
+                  children: [
+                    TextSpan(
+                      style: TextStyle(color: greenColor, fontSize: 10.0),
+                      text: " right away"
+                    )
+                  ]
                 ),
               )
             ],
