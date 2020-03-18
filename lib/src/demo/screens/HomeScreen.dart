@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -65,7 +66,7 @@ class FirstTabContent extends StatelessWidget {
     var badgeColor = Color(0xFFFE7777);
 
     return Container(
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(24.0),
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -124,7 +125,7 @@ class FirstTabContent extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 16.0),
+            SizedBox(height: 24.0),
             SizedBox(
               height: 36,
               child: Row(
@@ -143,7 +144,7 @@ class FirstTabContent extends StatelessWidget {
                           filled: true,
                           fillColor: Color(0xFFF8FAFB),
                           hintText:
-                              "Search for your grade, course, training type...",
+                          "Search for your grade, course, training type...",
                           hintStyle: TextStyle(
                               color: Colors.grey[500], fontSize: 12.0),
                           prefixIcon: Icon(
@@ -157,7 +158,7 @@ class FirstTabContent extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 24.0,
             ),
             GridView.count(
               crossAxisCount: 3,
@@ -189,7 +190,7 @@ class FirstTabContent extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 4,
+              height: 16,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -232,9 +233,9 @@ class FirstTabContent extends StatelessWidget {
                   child: DecoratedBox(
                     child: Center(
                         child: Text(
-                      '6',
-                      style: TextStyle(color: Colors.white, fontSize: 10),
-                    )),
+                          '6',
+                          style: TextStyle(color: Colors.white, fontSize: 10),
+                        )),
                     decoration: BoxDecoration(
                         color: Color(0xFF8CD195),
                         shape: BoxShape.rectangle,
@@ -246,54 +247,83 @@ class FirstTabContent extends StatelessWidget {
             SizedBox(
               width: 6,
             ),
-            Container(
-              height: 120,
-              // TODO: Resolve this, remove height or container itself
+            SizedBox(
+              height: 180,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 6,
+                  itemCount: 8,
                   itemBuilder: (context, index) {
                     return Container(
-                      height: 50.0,
-                      margin: EdgeInsets.only(right: 16.0),
+                      height: 80.0,
+                      margin: EdgeInsets.only(right: 8.0),
                       child: Stack(
+                        alignment: Alignment.topCenter,
                         children: <Widget>[
-                          Card(
-                            elevation: 4.0,
-                            color: Colors.white,
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  "Morning Textbook",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 12.0),
+                          Padding(
+                            padding: EdgeInsets.only(top: 40),
+                            child: Card(
+                              elevation: 2.0,
+                              color: Colors.white,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 36.0, left: 6.0, right: 6.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      "Morning Textbook",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w300,
+                                          fontSize: 12.0),
+                                    ),
+                                    SizedBox(
+                                      height: 4.0,
+                                    ),
+                                    Text(
+                                      "8.6",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 16.0),
+                                    ),
+                                    SizedBox(
+                                      height: 8.0,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                            RatingBar(
+                                              initialRating: 2,
+                                              minRating: 1,
+                                              itemSize: 12.0,
+                                              direction: Axis.horizontal,
+                                              allowHalfRating: true,
+                                              itemCount: 3,
+                                              itemPadding: EdgeInsets.symmetric(
+                                                  horizontal: 2.0),
+                                              itemBuilder: (context, _) =>
+                                                  Icon(
+                                                    Icons.star,
+                                                    color: Colors.amber,
+                                                  ),
+                                              onRatingUpdate: (rating) {},
+                                            ),
+                                        ]),
+                                  ],
                                 ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  "8.6",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 16.0),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                              ],
+                              ),
                             ),
                           ),
                           Positioned(
                             left: 8.0,
                             right: 8.0,
-                            height: 92.0,
-                            child: Container(
-                              child: Image(
-                                image: AssetImage("assets/img/wall.jpg"),
-                              ),
+                            top: 16.0,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.asset("assets/img/wall.jpg"),
                             ),
                           )
                         ],
